@@ -1,0 +1,7 @@
+/* css/style.css
+   Tailwind (loaded via CDN in each HTML file) handles almost everything.
+   Use this file only for the rare thing Tailwind utility classes can't do. */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}

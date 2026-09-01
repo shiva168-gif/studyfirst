@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In - StudyRank</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 1. Supabase library from CDN (must come first) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- 2. Our client + auth logic -->
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/auth.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center px-4">
+  <div class="bg-white shadow rounded-xl p-8 w-full max-w-sm">
+    <h1 class="text-2xl font-bold text-indigo-600 mb-6 text-center">Log In</h1>
+
+    <form id="login-form" class="space-y-4">
+      <div>
+        <label class="block text-sm text-gray-600 mb-1">Email</label>
+        <input id="login-email" type="email" required
+               class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+      </div>
+      <div>
+        <label class="block text-sm text-gray-600 mb-1">Password</label>
+        <input id="login-password" type="password" required
+               class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+      </div>
+
+      <p id="login-error" class="text-red-500 text-sm"></p>
+
+      <button type="submit"
+              class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+        Log In
+      </button>
+    </form>
+
+    <p class="text-sm text-gray-500 mt-4 text-center">
+      New here? <a href="signup.html" class="text-indigo-600 hover:underline">Create an account</a>
+    </p>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", handleLogin);
+  </script>
+</body>
+</html>
